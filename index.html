@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NihonGo w/ Kou ｜ あなたの可能性を、日本語で。</title>
+<meta name="description" content="やさしい日本語で、心の通う会話を。海外で日本語を続けたい方、帰国子女、保護者の方へ。N4以上の方向けの、少人数・じっくり型のオンライン日本語レッスン。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF8F1;
+    --panel:#F4EFE3;
+    --ink:#2C2824;
+    --ink-soft:#6E655A;
+    --accent:#345F7D;
+    --line:#E4DBC9;
+    --display:'Klee One', cursive;
+    --body:'Zen Kaku Gothic New', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-weight:400;
+    line-height:1.9;
+    font-size:17px;
+    letter-spacing:.01em;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:600px;
+    margin:0 auto;
+    padding:0 26px;
+  }
+
+  /* ---- shared ---- */
+  .eyebrow{
+    font-family:var(--display);
+    color:var(--accent);
+    font-size:15px;
+    letter-spacing:.06em;
+    margin:0 0 10px;
+  }
+  h2{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:1.45rem;
+    line-height:1.5;
+    margin:0 0 16px;
+    color:var(--ink);
+  }
+  p{margin:0 0 16px;}
+  a{color:var(--accent);}
+
+  section{padding:46px 0;}
+
+  /* hand-drawn divider */
+  .rule{display:block;width:100%;height:22px;color:var(--line);margin:0;}
+
+  /* ---- hero ---- */
+  .hero{padding:64px 0 38px; text-align:left;}
+  .portrait{
+    width:140px;height:140px;
+    border-radius:50%;
+    object-fit:cover;
+    border:1.5px solid var(--line);
+    background:var(--panel);
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--display);color:var(--ink-soft);
+    font-size:13px;text-align:center;line-height:1.6;
+    margin-bottom:24px;
+  }
+  .tagline{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:2.05rem;
+    line-height:1.5;
+    margin:0 0 8px;
+  }
+  .tagline-en{
+    font-family:var(--display);
+    color:var(--ink-soft);
+    font-size:1.05rem;
+    margin:0 0 22px;
+  }
+  .lede{color:var(--ink-soft);max-width:30em;}
+
+  /* ---- for-whom list ---- */
+  ul.plain{list-style:none;padding:0;margin:0 0 14px;}
+  ul.plain li{
+    position:relative;
+    padding-left:24px;
+    margin-bottom:12px;
+  }
+  ul.plain li::before{
+    content:"";
+    position:absolute;left:2px;top:13px;
+    width:9px;height:9px;
+    border:1.5px solid var(--accent);
+    border-radius:50%;
+  }
+  .note{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    background:var(--panel);
+    border-radius:12px;
+    padding:12px 16px;
+    display:inline-block;
+  }
+
+  /* ---- about ---- */
+  .meta{font-size:15px;color:var(--ink-soft);line-height:2;}
+  .meta strong{
+    font-family:var(--display);
+    color:var(--ink);
+    font-weight:600;
+    display:block;
+    margin-bottom:2px;
+    font-size:14px;
+    letter-spacing:.04em;
+  }
+  .meta-block{margin-bottom:18px;}
+
+  /* ---- lesson ---- */
+  .card{
+    background:var(--panel);
+    border-radius:16px;
+    padding:24px 22px;
+    margin-top:8px;
+  }
+  .card ul.plain li::before{border-color:var(--ink-soft);}
+  .placeholder{
+    color:var(--accent);
+    background:#fff;
+    border:1px dashed var(--accent);
+    border-radius:8px;
+    padding:1px 8px;
+    font-size:14px;
+    font-family:var(--body);
+  }
+
+  /* ---- cta ---- */
+  .cta{text-align:left; padding-bottom:40px;}
+  .btn{
+    display:inline-block;
+    font-family:var(--display);
+    font-size:1.05rem;
+    color:var(--paper);
+    background:var(--accent);
+    text-decoration:none;
+    padding:13px 28px;
+    border-radius:30px;
+    margin:6px 0;
+  }
+  .links{margin-top:18px;font-size:15px;color:var(--ink-soft);}
+  .links a{display:inline-block;margin-right:6px;}
+
+  footer{
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:13px;
+    padding:30px 0 50px;
+    font-family:var(--display);
+  }
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  a:focus-visible,.btn:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;}
+
+  @media (max-width:480px){
+    body{font-size:16px;}
+    .tagline{font-size:1.75rem;}
+    section{padding:38px 0;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ======= HERO ======= -->
+<header class="hero wrap reveal">
+  <!-- 似顔絵：下のdivを、あなたの似顔絵画像に差し替えてください -->
+  <!-- 例： <img class="portrait" src="kou.png" alt="こう"> -->
+  <div class="portrait">［ここに<br>似顔絵］</div>
+
+  <p class="tagline">あなたの可能性を、<br>日本語で。</p>
+  <p class="tagline-en">Your potential, in Japanese.</p>
+  <p class="lede">いろいろな分野の話を、やさしい日本語で。<br>心の通う会話を、いっしょに。</p>
+</header>
+
+<svg class="rule wrap" viewBox="0 0 600 22" fill="none" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 11 Q 30 3 60 11 T 120 11 T 180 11 T 240 11 T 300 11 T 360 11 T 420 11 T 480 11 T 540 11 T 600 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+</svg>
+
+<!-- ======= こんな方へ ======= -->
+<section class="wrap reveal">
+  <p class="eyebrow">こんな方へ ／ For you</p>
+  <h2>その言葉、もっと話せます。</h2>
+  <ul class="plain">
+    <li>海外で日本語を続けたい方、帰国子女の方</li>
+    <li>お子さんに日本語を伝えたい保護者の方</li>
+    <li>日本語で、心の通う会話がしたい方</li>
+  </ul>
+  <span class="note">目安：JLPT N4以上／簡単な会話ができる方</span>
+</section>
+
+<svg class="rule wrap" viewBox="0 0 600 22" fill="none" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 11 Q 30 19 60 11 T 120 11 T 180 11 T 240 11 T 300 11 T 360 11 T 420 11 T 480 11 T 540 11 T 600 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+</svg>
+
+<!-- ======= わたしについて ======= -->
+<section class="wrap reveal">
+  <p class="eyebrow">わたしについて ／ About</p>
+  <h2>こう / NihonGo w/ Kou</h2>
+  <p>わたし「こう」は、いろいろな分野の人と、やさしい日本語で話してきた日本語教師です。言葉を通して、人と人、世代と世代をつなぎたいと思っています。</p>
+
+  <div class="meta-block meta">
+    <strong>略歴</strong>
+    東京都立高校 教諭<br>
+    JICA（中国・日本語教育）<br>
+    徳州交通職業中等専業学校 日本語教師<br>
+    JOCA（青年海外協力協会）<br>
+    Locipe プロダクトマネージャー
+  </div>
+  <div class="meta">
+    <strong>資格</strong>
+    英検準2級／HSK 3級／基本情報技術者試験
+  </div>
+</section>
+
+<svg class="rule wrap" viewBox="0 0 600 22" fill="none" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 11 Q 30 3 60 11 T 120 11 T 180 11 T 240 11 T 300 11 T 360 11 T 420 11 T 480 11 T 540 11 T 600 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+</svg>
+
+<!-- ======= レッスン ======= -->
+<section class="wrap reveal">
+  <p class="eyebrow">レッスン ／ Lessons</p>
+  <h2>やさしい日本語で、1対1。</h2>
+  <div class="card">
+    <ul class="plain">
+      <li>料理や、いろいろな分野の話を題材に</li>
+      <li>「日本人ならどう考えるか」も、いっしょに</li>
+      <li>少人数・じっくり型（枠に限りがあります）</li>
+      <li>オンライン（Google Meet）</li>
+    </ul>
+    <p style="margin:14px 0 0;">料金：<span class="placeholder">［ここに記入：例 5,000円/時〜］</span></p>
+  </div>
+</section>
+
+<svg class="rule wrap" viewBox="0 0 600 22" fill="none" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 11 Q 30 19 60 11 T 120 11 T 180 11 T 240 11 T 300 11 T 360 11 T 420 11 T 480 11 T 540 11 T 600 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+</svg>
+
+<!-- ======= つながる ======= -->
+<section class="cta wrap reveal">
+  <p class="eyebrow">つながる ／ Get in touch</p>
+  <h2>まずは、気軽にご相談ください。</h2>
+  <p class="lede">あなたの「話したい」を、聞かせてください。</p>
+  <a class="btn" href="#" >ご連絡はこちら</a>
+  <p class="links">
+    連絡先：<span class="placeholder">［メール / フォーム等を記入］</span><br>
+    YouTube：<a href="#">［チャンネルURLを記入］</a>
+  </p>
+</section>
+
+<footer>あなたの可能性を、日本語で。</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
